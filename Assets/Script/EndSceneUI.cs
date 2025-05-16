@@ -24,6 +24,7 @@ public class EndSceneUI : MonoBehaviour
         
     }
 
+    // 数字を段階的に増やして表示するコルーチン
     IEnumerator CountUpText(TMP_Text targetText, int finalValue)
     {
         float elapsed = 0f;
@@ -32,8 +33,10 @@ public class EndSceneUI : MonoBehaviour
         while (elapsed < countDuration)
         {
             elapsed += Time.deltaTime;
+            // 経過時間に応じて線形補間
             float t = Mathf.Clamp01(elapsed / countDuration);
             currentValue = Mathf.RoundToInt(Mathf.Lerp(0, finalValue, t));
+            // テキスト更新
             targetText.text = currentValue.ToString();
             yield return null;
         }
@@ -42,6 +45,7 @@ public class EndSceneUI : MonoBehaviour
         targetText.text = finalValue.ToString(); 
     }
 
+    // 「End」ボタンが押されたときにタイトル画面に戻る
     public void OnEndButtonClick()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScene");

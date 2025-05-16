@@ -14,10 +14,12 @@ public class MapBoundsManager : MonoBehaviour
         
     }
 
+    // ヘッドがこのコライダーから外に出たときに呼ばれる
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Head"))
         {
+            // ゲームオーバー処理を呼び出し
             SnakeGameManager.Instance.OnPlayerDied();
         }
     }

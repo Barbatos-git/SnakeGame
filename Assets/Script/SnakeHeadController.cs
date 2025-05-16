@@ -32,6 +32,7 @@ public class SnakeHeadController : MonoBehaviour
         rb.linearVelocity = moveDirection * moveSpeed;
     }
 
+    // 矢印キーによる移動方向の入力処理
     void HeadInput()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow) && moveDirection != Vector2.down)
@@ -58,6 +59,7 @@ public class SnakeHeadController : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
     }
 
+    // 自分の体にぶつかったら死亡処理を呼ぶ
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<SnakeBodyPart>())

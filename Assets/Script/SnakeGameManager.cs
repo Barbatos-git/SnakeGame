@@ -51,6 +51,7 @@ public class SnakeGameManager : MonoBehaviour
 
         boxCollider = mapBounds.GetComponent<BoxCollider2D>();
         circleCollider = applePrefab.GetComponent<CircleCollider2D>();
+        // リンゴの生成範囲を算出
         spawnRangeMin = new Vector2(
             -boxCollider.size.x / 2 + circleCollider.radius / 2, 
             -boxCollider.size.y / 2 + circleCollider.radius / 2
@@ -60,7 +61,7 @@ public class SnakeGameManager : MonoBehaviour
             boxCollider.size.y / 2 - circleCollider.radius / 2
             );
 
-        SpawnApple();
+        SpawnApple();  // 初回リンゴ生成
     }
 
     private void Awake()

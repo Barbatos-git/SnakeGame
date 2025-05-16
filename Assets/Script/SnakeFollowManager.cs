@@ -21,6 +21,7 @@ public class SnakeFollowManager : MonoBehaviour
 
     void FixedUpdate()
     {
+        // 移動距離を計算して履歴追加
         Vector2 velocity = head.GetMoveDirection() * head.moveSpeed;
         distanceSinceLastRecord += (velocity * Time.fixedDeltaTime).magnitude;
 
@@ -30,8 +31,8 @@ public class SnakeFollowManager : MonoBehaviour
             distanceSinceLastRecord = 0f;
         }
 
-        UpdateFollowers();
-        CleanUpHistory();
+        UpdateFollowers();  // 体の追従処理
+        CleanUpHistory();  // 古い履歴を削除
     }
 
     void UpdateFollowers()
@@ -70,7 +71,7 @@ public class SnakeFollowManager : MonoBehaviour
             }
             accumulated += d;
         }
-        return positionHistory[positionHistory.Count - 1];
+        return positionHistory[positionHistory.Count - 1];  // 履歴末尾
     }
 
     void CleanUpHistory()

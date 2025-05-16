@@ -18,17 +18,21 @@ public class ButtonHoverSound : MonoBehaviour, IPointerEnterHandler, IPointerCli
         
     }
 
+    // マウスがボタンに乗ったときに呼ばれる
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (hoverClip)
         {
+            // 現在のカメラ位置から音を再生
             AudioSource.PlayClipAtPoint(hoverClip, Camera.main.transform.position);
         }
     }
 
+    // ボタンがクリックされたときに呼ばれる
     public void OnPointerClick(PointerEventData eventData)
     {
         if (AudioManager.Instance != null)
+            // AudioManagerで設定されたクリック音を再生
             AudioManager.Instance.ClickSoundPlay();
     }
 }

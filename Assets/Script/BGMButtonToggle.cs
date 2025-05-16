@@ -19,13 +19,18 @@ public class BGMButtonToggle : MonoBehaviour
         
     }
 
+    // ボタンがクリックされたときに呼ばれる処理
     public void OnClickToggle()
     {
+        // BGMの状態を反転
         bool isBGMOn = !AudioManager.Instance.IsBGMEnabled();
+        // AudioManagerに新しい状態を設定
         AudioManager.Instance.SetBGMEnabled(isBGMOn);
+        // アイコンを更新
         UpdateIcon();
     }
 
+    // 現在のBGM状態に基づいてアイコンを変更
     private void UpdateIcon()
     {
         if (iconImage != null)

@@ -19,9 +19,11 @@ public class DeadEffectSurfaceCheck : MonoBehaviour
         
     }
 
+    // エフェクトの出現位置に応じて地面 or 水上アニメーションを切り替える
     private IEnumerator DelayedSurfaceCheck()
     {
-        yield return new WaitForEndOfFrame();  // 1フレーム待機して、位置が安定するのを待つ
+        // 1フレーム待機して、位置が安定するのを待つ
+        yield return new WaitForEndOfFrame(); 
 
         // 位置補正。例：Y軸に0.16f（必要に応じて調整）
         Vector2 checkPoint = (Vector2)transform.position + Vector2.up * 0.5f;
@@ -30,7 +32,8 @@ public class DeadEffectSurfaceCheck : MonoBehaviour
 
         if (!isOnGround)
         {
-            animator.SetBool("isOnWater", true); // 水上のエフェクトアニメーションを設定
+            // 水上のエフェクトアニメーションを設定
+            animator.SetBool("isOnWater", true); 
         }
     }
 

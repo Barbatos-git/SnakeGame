@@ -29,16 +29,19 @@ public class GameOverUI : MonoBehaviour
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
         gameOverPanel.SetActive(false);
+        // ボタンにイベントを登録
         restartButton.onClick.AddListener(RestartGame);
         endButton.onClick.AddListener(EndGame);
     }
 
+    // ゲームオーバー画面を表示
     public void ShowGameOver()
     {
         gameOverPanel.SetActive(true);
         StartCoroutine(FadeInUI());
     }
 
+    // UIをフェードインさせるコルーチン
     private IEnumerator FadeInUI()
     {
         canvasGroup.alpha = 0;
@@ -54,6 +57,7 @@ public class GameOverUI : MonoBehaviour
         canvasGroup.blocksRaycasts = true;
     }
 
+    // 現在のシーンを再読込して再スタート
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -63,6 +67,7 @@ public class GameOverUI : MonoBehaviour
         }
     }
 
+    // エンドシーンに移行
     public void EndGame()
     {
         SceneManager.LoadScene("EndScene");
