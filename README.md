@@ -24,7 +24,6 @@ Unity 2D スネークゲーム
   - Scenes：TitleScene（タイトル画面）、GameScene（ゲーム本編）、EndScene（ゲーム終了画面）
   - Scripts：キャラクター制御、追従システム、マネージャー、UI制御など
   - Prefabs：キャラクター、体、肉、エフェクトなどのプレハブ
-  - UI：ボタン、テキスト、背景などのUI素材
   - Animations：Animator Controller とアニメーションファイル
 
 使用方法：
