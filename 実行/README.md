@@ -27,7 +27,7 @@ Unity 2D スネークゲーム
   - Animations：Animator Controller とアニメーションファイル
 
 使用方法：
-1. Unity 6.0 以上でプロジェクトを開いてください。
+1. Unity 6000.0.23f1
 2. `TitleScene` を実行するとゲームが始まります。
 3. File → Build Settings → Build を使って .exe ファイルとしてエクスポート可能。
 
