@@ -4,3 +4,6 @@
 - ソースコードフォルダ：ソースコードファイルのまとめ
 - docs：ウェブ表示用のゲームのウェブバージョン
   - ウェブ表示URL: https://barbatos-git.github.io/SnakeGame/
+- Releases: ゲーム紹介動画が含まれます
+  - URL: https://github.com/Barbatos-git/SnakeGame/releases/tag/v1.0
+
